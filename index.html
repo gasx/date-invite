@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#120915" />
+  <meta name="description" content="Небольшое приглашение на свидание 💌" />
+  <title>У меня к тебе один вопрос 💌</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+  <div class="noise"></div>
+
+  <div class="floating-hearts" aria-hidden="true">
+    <span style="--x:8%;--delay:-2s;--dur:14s;--size:18px">♥</span>
+    <span style="--x:18%;--delay:-8s;--dur:18s;--size:10px">♥</span>
+    <span style="--x:33%;--delay:-4s;--dur:16s;--size:14px">♥</span>
+    <span style="--x:50%;--delay:-11s;--dur:20s;--size:9px">♥</span>
+    <span style="--x:67%;--delay:-6s;--dur:15s;--size:15px">♥</span>
+    <span style="--x:81%;--delay:-10s;--dur:19s;--size:11px">♥</span>
+    <span style="--x:93%;--delay:-3s;--dur:17s;--size:17px">♥</span>
+  </div>
+
+  <main class="shell">
+    <section class="card" id="inviteCard" aria-live="polite">
+      <div class="eyebrow">Есть один важный вопрос</div>
+
+      <div class="heart-lockup" aria-hidden="true">
+        <div class="heart-glow"></div>
+        <div class="heart-icon">♥</div>
+        <span class="orbit orbit-a">✦</span>
+        <span class="orbit orbit-b">✧</span>
+      </div>
+
+      <div id="questionStep" class="step step-visible">
+        <h1>Патя, пойдёшь со мной<br><span>на свидание?</span></h1>
+        <p class="subtitle">Обещаю: будет красиво и вкусно ✨</p>
+
+        <div class="button-zone" id="buttonZone">
+          <button class="btn btn-yes" id="yesBtn" type="button">
+            <span>Да</span>
+            <span class="btn-icon">♥</span>
+          </button>
+
+          <button class="btn btn-no" id="noBtn" type="button" aria-label="Нет">
+            Нет 🙈
+          </button>
+        </div>
+
+        <p class="tiny-hint">P.S. у одной из кнопок сегодня очень плохое настроение 😌</p>
+      </div>
+
+      <div id="plannerStep" class="step" aria-hidden="true">
+        <div class="success-pill">✓ Отличный выбор</div>
+        <h2>Тогда выбирай день 💗</h2>
+        <p class="subtitle compact">Когда тебе будет удобно?</p>
+
+        <div class="planner-grid">
+          <div class="calendar-panel">
+            <div class="calendar-head">
+              <button class="icon-btn" id="prevMonth" type="button" aria-label="Предыдущий месяц">‹</button>
+              <div>
+                <div class="month-label" id="monthLabel"></div>
+                <div class="year-label" id="yearLabel"></div>
+              </div>
+              <button class="icon-btn" id="nextMonth" type="button" aria-label="Следующий месяц">›</button>
+            </div>
+
+            <div class="weekdays" aria-hidden="true">
+              <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+          </div>
+
+          <div class="time-panel">
+            <div class="field-label">Во сколько?</div>
+            <div class="time-presets" id="timePresets">
+              <button type="button" data-time="17:00">17:00</button>
+              <button type="button" data-time="18:00">18:00</button>
+              <button type="button" data-time="19:00">19:00</button>
+              <button type="button" data-time="20:00">20:00</button>
+              <button type="button" data-time="21:00">21:00</button>
+              <button type="button" data-time="22:00">22:00</button>
+            </div>
+
+            <label class="custom-time-wrap">
+              <span>Или своё время</span>
+              <input id="customTime" type="time" step="900" />
+            </label>
+
+            <div class="selection-preview" id="selectionPreview">
+              <div class="selection-icon">♡</div>
+              <div>
+                <small>Наше свидание</small>
+                <strong id="selectionText">Выбери дату и время</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-share" id="shareBtn" type="button" disabled>
+          Отправить мой ответ 💌
+        </button>
+        <button class="text-btn" id="copyBtn" type="button" disabled>
+          Скопировать ответ
+        </button>
+        <p class="share-note" id="shareNote">После нажатия можно выбрать Telegram, WhatsApp или другой мессенджер.</p>
+      </div>
+    </section>
+
+    <footer>made with <span>♥</span> for Patya</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
